@@ -7,32 +7,39 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <ion-item>
     <ion-label position="floating">Digite seu peso (kg)</ion-label>
     <ion-input type="number" [(ngModel)]="peso"></ion-input>
   </ion-item>
+  
   <ion-item>
     <ion-range label="Altura (cm)" [pin]="true" [min]="1" [max]="200" [(ngModel)]="altura"></ion-range>
   </ion-item>
+  
   <ion-item>
-    <ion-range label="Idade" [pin]="true" [min]="1"></ion-range>
+    <ion-range label="Idade" [pin]="true" [min]="1" [(ngModel)]="idade"></ion-range>
   </ion-item>
+  
   <ion-segment value="sexo" [(ngModel)]="sexo">
-    <ion-segment-button  value="Masculino">
+    <ion-segment-button value="Masculino">
       <ion-label color="primary">Masculino</ion-label>
     </ion-segment-button>
     <ion-segment-button value="Feminino">
       <ion-label color="danger">Feminino</ion-label>
     </ion-segment-button>
   </ion-segment>
+  
   <ion-item class="button" (click)="botaoSaude()">
     <ion-button shape="round" >Minha saúde</ion-button>
   </ion-item>
 
   <ion-item>
     <p>
-      {{ resp }}
-    </p>
-
+      {{ parametros }} <br><br>
+      {{ feedback }} <br><br>
+      {{ indicacao }} 
+    </p><br>
   </ion-item>
+
 </ion-content>
